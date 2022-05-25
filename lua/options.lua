@@ -59,4 +59,3 @@ end
 if utils.isNotEmpty(settings.grepprg) then
     o.grepprg = settings.grepprg
 end
-
