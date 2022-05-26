@@ -100,6 +100,10 @@ wk.register({
     },
     f = {
         name = "Files",
+        b = { "<cmd>Telescope file_browser<cr>",       "file Browser" },
+        f = { require"telescope.builtin".find_files,   "Find file" },
+        r = { "<cmd>Telescope oldfile<cr>",            "open Recent file" },
+
     },
     l = {
         name = "LSP",
@@ -123,8 +127,9 @@ wk.register({
     },
     m = {
         name = "Misc",
-        d = { require("functions").toggle_diagnostics, "Toggle Diagnostics"},
+        d = { require("functions").toggle_diagnostics, "toggle Diagnostics" },
         p = { "<cmd>PackerSync<cr>",                   "PackerSync" },
+        t = { "<cmd>FloatermToggle<cr>",               "Terminal" },
     },
     q = {
         name = "Quickfix",
@@ -135,10 +140,10 @@ wk.register({
     w = {
         name = "Window",
         p = { "<c-w>x",                                "swaP" },
-        q = { "<cmd>q<cr>",                           "Quit" },
-        s = { "<cmd>split<cr>",                       "Split" },
+        q = { "<cmd>q<cr>",                            "Quit" },
+        s = { "<cmd>split<cr>",                        "Split" },
         t = { "<c-w>t",                                "move to new Tab" },
-        ["="] = { "<c-w>=",                            "Equally size"},
-        v = { "<cmd>vsplit<cr>",                      "Vertical split"},
+        ["="] = { "<c-w>=",                            "Equally size" },
+        v = { "<cmd>vsplit<cr>",                       "Vertical split" },
     },
 }, { prefix = "<leader>", mode = "n", default_options })

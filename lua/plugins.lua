@@ -45,7 +45,7 @@ return require('packer').startup(function(use)
 
 
     -- Mobility
-     use({
+    use({
         "nvim-telescope/telescope.nvim",
         requires = {{ "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" }},
         config = get_config("telescope"),
@@ -53,7 +53,6 @@ return require('packer').startup(function(use)
    	use({ "nvim-telescope/telescope-symbols.nvim" })
    	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use({ "nvim-telescope/telescope-file-browser.nvim" })
-
 
    	use({ "numToStr/Navigator.nvim", config = get_config("navigator") })
     use({
