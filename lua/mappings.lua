@@ -44,6 +44,19 @@ map("n", "<Down>",  ":resize +2<cr>")
 map("x", "K", ":move '<-2<cr>gv-gv")
 map("x", "J", ":move '>+1<cr>gv-gv")
 
+-- starlite mappings
+map("n", "*", function()
+	return require("starlite").star()
+end)
+map("n", "g*", function()
+	return require("starlite").g_star()
+end)
+map("n", "#", function()
+	return require("starlite").hash()
+end)
+map("n", "g#", function()
+	return require("starlite").g_hash()
+end)
 
 -- move over a closing element in insert mode
 map("i", "<C-l>", function()

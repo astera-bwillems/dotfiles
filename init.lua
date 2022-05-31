@@ -1,5 +1,5 @@
+require'mappings'
 require'options'
 require'plugins'
-require'mappings'
 require'functions'
 require'autocmd'

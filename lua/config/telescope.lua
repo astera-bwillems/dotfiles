@@ -3,7 +3,7 @@ local actions = require("telescope.actions")
 
 telescope.setup({
     defaults = {
-        file_ignore_patterns = { ".vscode", "%.so", "%.o" },
+        file_ignore_patterns = { ".vscode", "%.so", "%.o", ".git/" },
         mappings = {
             i = {
                 -- Close on first esc instead of gonig to normal mode
@@ -48,4 +48,5 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 telescope.load_extension("file_browser")
+telescope.load_extension("harpoon")
 

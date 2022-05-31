@@ -16,6 +16,10 @@ return require('packer').startup(function(use)
         event = "VimEnter",
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
     })
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = get_config("indent-blankline"),
+	})
 
     -- LSP + TS
     use({ "neovim/nvim-lspconfig", config = get_config("lsp") })
@@ -56,6 +60,11 @@ return require('packer').startup(function(use)
 
    	use({ "numToStr/Navigator.nvim", config = get_config("navigator") })
     use({
+		"ThePrimeagen/harpoon",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = get_config("harpoon"),
+	})
+    use({
         "akinsho/nvim-bufferline.lua",
         tag = "v2.*",
         requires = "kyazdani42/nvim-web-devicons",
@@ -63,16 +72,15 @@ return require('packer').startup(function(use)
         config = get_config("bufferline"),
     })
     use({ "famiu/bufdelete.nvim" })
-
-
     use({ "ggandor/lightspeed.nvim" })
-  	use({ "mfussenegger/nvim-ts-hint-textobject" })
+    use({ "mfussenegger/nvim-ts-hint-textobject" })
+	use({ "ironhouzi/starlite-nvim" })
 
     -- Editing
     use({ "tpope/vim-surround" })
     use({ "tpope/vim-repeat" })
     use({ "windwp/nvim-autopairs", config = get_config("autopairs") })
-    use({ "junegunn/vim-easy-align" }) -- no lua alternative
+    use("junegunn/vim-easy-align") -- no lua alternative
     use {
       "folke/which-key.nvim",
       config = get_config("which")

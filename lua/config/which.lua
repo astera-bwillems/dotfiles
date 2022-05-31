@@ -103,7 +103,31 @@ wk.register({
         b = { "<cmd>Telescope file_browser<cr>",       "file Browser" },
         f = { require"telescope.builtin".find_files,   "Find file" },
         r = { "<cmd>Telescope oldfile<cr>",            "open Recent file" },
-
+        g = { "<cmd>Telescope live_grep<cr>",          "live Grep"},
+    },
+    h = {
+        name = "Harpoon",
+		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file" },
+		u = {
+			"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
+			"Open Menu",
+		},
+		["1"] = {
+			"<cmd>lua require('harpoon.ui').nav_file(1)<cr>",
+			"Open File 1",
+		},
+		["2"] = {
+			"<cmd>lua require('harpoon.ui').nav_file(2)<cr>",
+			"Open File 2",
+		},
+		["3"] = {
+			"<cmd>lua require('harpoon.ui').nav_file(3)<cr>",
+			"Open File 3",
+		},
+		["4"] = {
+			"<cmd>lua require('harpoon.ui').nav_file(4)<cr>",
+			"Open File 4",
+		},
     },
     l = {
         name = "LSP",
