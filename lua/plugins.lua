@@ -47,6 +47,11 @@ return require('packer').startup(function(use)
 		config = get_config("luasnip"),
 	})
 
+    -- Git
+    use({
+        "TimUntersberger/neogit", requires = 'nvim-lua/plenary.nvim',
+        config = get_config("neogit")
+    })
 
     -- Mobility
     use({
@@ -75,6 +80,7 @@ return require('packer').startup(function(use)
     use({ "ggandor/lightspeed.nvim" })
     use({ "mfussenegger/nvim-ts-hint-textobject" })
 	use({ "ironhouzi/starlite-nvim" })
+    use({ "karb94/neoscroll.nvim", config = get_config("neoscroll") })
 
     -- Editing
     use({ "tpope/vim-surround" })

@@ -9,6 +9,6 @@ M.grepprg = "rg --hidden --vimgrep --smart-case --"
 -- set numbered lines
 M.number = true
 -- set relative numbered lines
-M.relative_number = false
+M.relativenumber = true
 
 return M

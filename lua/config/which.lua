@@ -105,6 +105,10 @@ wk.register({
         r = { "<cmd>Telescope oldfile<cr>",            "open Recent file" },
         g = { "<cmd>Telescope live_grep<cr>",          "live Grep"},
     },
+    g = {
+        name = "Git",
+        n = { require("neogit").open,                  "Neogit" },
+    },
     h = {
         name = "Harpoon",
 		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file" },
