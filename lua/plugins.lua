@@ -29,6 +29,12 @@ return require('packer').startup(function(use)
         config = get_config("treesitter"),
         run = ":TSUpdate",
     })
+    use({
+		"SmiteshP/nvim-gps",
+		config = function()
+			require("nvim-gps").setup({})
+		end,
+	})
 
     -- LSP Completion + snip
     use({
@@ -52,6 +58,13 @@ return require('packer').startup(function(use)
         "TimUntersberger/neogit", requires = 'nvim-lua/plenary.nvim',
         config = get_config("neogit")
     })
+    use({
+		"lewis6991/gitsigns.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		event = "BufReadPre",
+		config = get_config("gitsigns"),
+	})
+
 
     -- Mobility
     use({
@@ -83,21 +96,24 @@ return require('packer').startup(function(use)
     use({ "karb94/neoscroll.nvim", config = get_config("neoscroll") })
 
     -- Editing
-    use({ "tpope/vim-surround" })
     use({ "tpope/vim-repeat" })
     use({ "windwp/nvim-autopairs", config = get_config("autopairs") })
     use("junegunn/vim-easy-align") -- no lua alternative
-    use {
+    use({
       "folke/which-key.nvim",
       config = get_config("which")
-    }
+    })
+    use({ "echasnovski/mini.nvim", config = get_config("mini") })
 
     -- Theme
     if settings.theme == "nightfox" then
 		use({ "EdenEast/nightfox.nvim", config = get_config("nightfox") })
 	elseif settings.theme == "catppuccino" then
 		use({ "catppuccin/nvim", as = "catppuccin", config = get_config("catppuccin") })
+    elseif settings.theme == "gruvbox" then
+        use({ "ellisonleao/gruvbox.nvim", config = get_config("gruvbox") })
 	else
 		use({ "catppuccin/nvim", as = "catppuccin", config = get_config("catppuccin") })
 	end
+
 end)
