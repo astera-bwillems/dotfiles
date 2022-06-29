@@ -3,13 +3,20 @@ local catppuccin = require("catppuccin")
 catppuccin.setup({
 	transparent_background = false,
 	term_colors = false,
-	styles = {
-		comments = "italic",
-		functions = "italic",
-		keywords = "italic",
-		strings = "NONE",
-		variables = "italic",
-	},
+    styles = {
+        comments = "italic",
+        conditionals = "italic",
+        loops = "NONE",
+        functions = "NONE",
+        keywords = "NONE",
+        strings = "NONE",
+        variables = "NONE",
+        numbers = "NONE",
+        booleans = "NONE",
+        properties = "NONE",
+        types = "NONE",
+        operators = "NONE",
+    },
 	integrations = {
 		treesitter = true,
 		native_lsp = {
@@ -63,4 +70,5 @@ catppuccin.setup({
 --		symbols_outline = true,
 	},
 })
+vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
 vim.cmd([[colorscheme catppuccin]])

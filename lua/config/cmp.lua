@@ -1,6 +1,6 @@
 -- Setup nvim-cmp.
 local cmp = require'cmp'
-
+local lspkind = require('lspkind')
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -25,6 +25,21 @@ cmp.setup({
         { name = 'luasnip' }, -- For luasnip users.
     }, {
         { name = 'buffer' },
-    })
+    }),
+    formatting = {
+		format = lspkind.cmp_format({
+			maxwidth = 50,
+			mode = "symbol",
+			menu = {
+				buffer = "BUF",
+				rg = "RG",
+				nvim_lsp = "LSP",
+				path = "PATH",
+				luasnip = "SNIP",
+				calc = "CALC",
+				spell = "SPELL",
+			},
+		}),
+	},
 })
 

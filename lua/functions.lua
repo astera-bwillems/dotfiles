@@ -30,7 +30,7 @@ end
 M.escapePair = function()
 	local closers = { ")", "]", "}", ">", "'", '"', "`", "," }
 	local line = vim.api.nvim_get_current_line()
-	local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+	local row, col = table.unpack(vim.api.nvim_win_get_cursor(0))
 	local after = line:sub(col + 1, -1)
 	local closer_col = #after + 1
 	local closer_i = nil
@@ -48,10 +48,10 @@ M.escapePair = function()
 	end
 end
 
-diagnostics_active = true -- must be global since this function is called in which.lua
+DIAGNOSTICS_ACTIVE = true -- must be global since this function is called in which.lua
 M.toggle_diagnostics = function()
-	diagnostics_active = not diagnostics_active
-	if diagnostics_active then
+	DIAGNOSTICS_ACTIVE = not DIAGNOSTICS_ACTIVE
+	if DIAGNOSTICS_ACTIVE then
 		vim.diagnostic.show()
 	else
 		vim.diagnostic.hide()

@@ -5,7 +5,7 @@ if not status_ok then return end
 local servers = {
     "clangd",
     "sumneko_lua",
-    "pyright"
+    "pyright",
 }
 
 lsp_installer.setup {

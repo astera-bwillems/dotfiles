@@ -17,9 +17,6 @@ vim.g.mapleader = " "
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_options)
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_options)
 
--- jk to escape
-map("i", "jk", "<ESC>")
-
 -- better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")

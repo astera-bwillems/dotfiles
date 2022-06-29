@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
 		config = get_config("indent-blankline"),
 	})
 
+
     -- LSP + TS
     use({ "neovim/nvim-lspconfig", config = get_config("lsp") })
     use({ "williamboman/nvim-lsp-installer" })
@@ -64,7 +65,12 @@ return require('packer').startup(function(use)
 		event = "BufReadPre",
 		config = get_config("gitsigns"),
 	})
-
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = get_config("lspsaga")
+    })
+    use({ "onsails/lspkind-nvim", requires = { "famiu/bufdelete.nvim" } })
 
     -- Mobility
     use({
@@ -94,6 +100,7 @@ return require('packer').startup(function(use)
     use({ "mfussenegger/nvim-ts-hint-textobject" })
 	use({ "ironhouzi/starlite-nvim" })
     use({ "karb94/neoscroll.nvim", config = get_config("neoscroll") })
+    use({ "ahmedkhalf/project.nvim", config = get_config("project") })
 
     -- Editing
     use({ "tpope/vim-repeat" })
@@ -104,6 +111,7 @@ return require('packer').startup(function(use)
       config = get_config("which")
     })
     use({ "echasnovski/mini.nvim", config = get_config("mini") })
+    use({ "simrat39/symbols-outline.nvim", config = get_config("symbols")})
 
     -- Theme
     if settings.theme == "nightfox" then
