@@ -17,6 +17,10 @@ vim.g.mapleader = " "
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_options)
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_options)
 
+-- unbind increment and decrement
+map("n", "<C-a>", "<Nop>")
+map("n", "<C-x>", "<Nop>")
+
 -- better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")

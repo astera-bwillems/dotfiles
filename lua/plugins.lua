@@ -6,7 +6,10 @@ end
 return require('packer').startup(function(use)
     use("wbthomason/packer.nvim")
 
+    -- Utilities
+
     use({ "tweekmonster/startuptime.vim" })
+    use({ "mickael-menu/zk-nvim", confing = get_config("zk") })
 
     -- Look and feel
     use({ "kyazdani42/nvim-web-devicons" })
@@ -31,11 +34,15 @@ return require('packer').startup(function(use)
         run = ":TSUpdate",
     })
     use({
-		"SmiteshP/nvim-gps",
-		config = function()
-			require("nvim-gps").setup({})
-		end,
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig"
 	})
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = get_config("lspsaga")
+    })
+    use({ "onsails/lspkind-nvim", requires = { "famiu/bufdelete.nvim" } })
 
     -- LSP Completion + snip
     use({
@@ -55,8 +62,25 @@ return require('packer').startup(function(use)
 	})
 
     -- Git
+
+    -- requirement for Neogit
     use({
-        "TimUntersberger/neogit", requires = 'nvim-lua/plenary.nvim',
+        "sindrets/diffview.nvim",
+        cmd = {
+          "DiffviewOpen",
+          "DiffviewClose",
+          "DiffviewToggleFiles",
+          "DiffviewFocusFiles",
+        },
+        requires = { "nvim-lua/plenary.nvim"},
+        config = get_config("diffview"),
+    })
+    use({
+        "TimUntersberger/neogit",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "sindrets/diffview.nvim"
+        },
         config = get_config("neogit")
     })
     use({
@@ -65,12 +89,6 @@ return require('packer').startup(function(use)
 		event = "BufReadPre",
 		config = get_config("gitsigns"),
 	})
-    use({
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-        config = get_config("lspsaga")
-    })
-    use({ "onsails/lspkind-nvim", requires = { "famiu/bufdelete.nvim" } })
 
     -- Mobility
     use({

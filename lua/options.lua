@@ -53,6 +53,7 @@ o.foldmethod = "expr"
 o.foldexpr = "nvim_treesitter#foldexpr()"
 o.shortmess = o.shortmess + "c"
 o.wildignorecase = true
+o.winbar = "%=%F"
 if (settings.global_statusline) then
     o.laststatus = 3
 else

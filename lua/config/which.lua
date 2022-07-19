@@ -105,13 +105,13 @@ wk.register({
         g = { "<cmd>Telescope live_grep<cr>",          "live Grep"},
         p = { "<cmd>Telescope projects<cr>",           "open recent Project" },
         r = { "<cmd>Telescope oldfiles<cr>",           "open Recent file" },
+        z = { "<cmd>"}
     },
     g = {
         name = "Git",
         n = { require("neogit").open,                  "Neogit" },
         s = { require("telescope.builtin").git_status, "Status" },
         c = { require("telescope.builtin").git_commits,"Commits" },
-
     },
     h = {
         name = "Harpoon",
@@ -190,4 +190,8 @@ wk.register({
         ["="] = { "<c-w>=",                            "Equally size" },
         v = { "<cmd>vsplit<cr>",                       "Vertical split" },
     },
+    z = {
+        name = "Zettelkasten",
+
+    }
 }, { prefix = "<leader>", mode = "n", default_options })

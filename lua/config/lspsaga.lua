@@ -36,9 +36,13 @@ saga.init_lsp_saga({
         sign_priority = 20,
         virtual_text = true,
     },
-    -- separator in finder
-    finder_separator = "  ",
-    -- preview lines of lsp_finder and definition preview
+    -- finder icons
+    finder_icons = {
+      def = '  ',
+      ref = '諭 ',
+      link = '  ',
+    },
+        -- preview lines of lsp_finder and definition preview
     max_preview_lines = 10,
     finder_action_keys = {
         open = "o",
@@ -55,6 +59,17 @@ saga.init_lsp_saga({
     },
     rename_action_quit = "<C-c>",
     definition_preview_icon = "  ",
+    -- show outline
+    -- show_outline = {
+    --   win_position = 'right',
+    --   -- set the special filetype in there which in left like nvimtree neotree defx
+    --   left_with = '',
+    --   win_width = 30,
+    --   auto_enter = true,
+    --   auto_preview = true,
+    --   virt_text = '┃',
+    --   jump_key = 'o',
+    -- },
     -- if you don't use nvim-lspconfig you must pass your server name and
     -- the related filetypes into this table
     -- like server_filetype_map = { metals = { "sbt", "scala" } }
