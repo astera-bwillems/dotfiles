@@ -33,6 +33,8 @@ return require('packer').startup(function(use)
         config = get_config("treesitter"),
         run = ":TSUpdate",
     })
+    use("nvim-treesitter/playground")
+    use("romgrk/nvim-treesitter-context")
     use({
         "SmiteshP/nvim-navic",
         requires = "neovim/nvim-lspconfig"
@@ -117,7 +119,7 @@ return require('packer').startup(function(use)
     use({ "ggandor/lightspeed.nvim" })
     use({ "mfussenegger/nvim-ts-hint-textobject" })
 	use({ "ironhouzi/starlite-nvim" })
-    use({ "karb94/neoscroll.nvim", config = get_config("neoscroll") })
+    -- use({ "karb94/neoscroll.nvim", config = get_config("neoscroll") })
     use({ "ahmedkhalf/project.nvim", config = get_config("project") })
 
     -- Editing

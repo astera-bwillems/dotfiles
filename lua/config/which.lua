@@ -91,7 +91,7 @@ wk.register({
             "<cmd>BufferLineCloseLeft<cr><cmd><BufferLineCloseRight<cr>",
             "close All but the current buffer"
         },
-        d = { "<cmd>Bdelete!<cr>",                     "Delete buffer" },
+        d = { "<cmd>bdelete!<cr>",                     "Delete buffer" },
         f = { "<cmd>BufferLinePick<cr>",               "pick buffer" },
 		l = { "<cmd>BufferLineCloseLeft<cr>",          "close all Left" },
 		r = { "<cmd>BufferLineCloseRight<cr>",         "close all Right", },
